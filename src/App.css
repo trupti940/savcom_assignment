@@ -1,0 +1,195 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgb(225, 245, 245);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: rgb(225, 245, 245);
+}
+
+.app input {
+  padding: 10px;
+  width: 85%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-left: 35px;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  background: #24bdc8;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #0092b3;
+}
+
+.captcha-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  background-color: rgb(225, 245, 245);
+  text-align: center;
+  color: black;
+}
+
+.captcha-container h2 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 25px; 
+  padding: 16px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  margin: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px; 
+}
+
+.item div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin: 8px 0;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #555;
+}
+
+.card-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007b00;
+}
+
+.item:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+
+.is-dragging {
+  opacity: 0.5;
+  border: 2px dashed #007bff;
+  background-color: #eaf4ff;
+}
+
+.item img {
+  display: block;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 1200px) {
+  .item-list {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .pagination button {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .item-list {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .app input {
+    width: 90%;
+    margin-left: 15px; 
+  }
+
+  .pagination button {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-list {
+    grid-template-columns: 1fr; 
+  }
+
+  .app input {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .pagination button {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    padding: 10px;
+  }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+
+  .card-price {
+    font-size: 18px;
+  }
+
+  .captcha-container h2 {
+    font-size: 1.5em;
+  }
+}
