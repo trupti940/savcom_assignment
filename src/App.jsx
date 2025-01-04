@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import ItemList from './components/ItemList';
-import TextCaptcha from './components/TextCaptcha';
+import ReCaptcha from './components/ReCaptcha';
 import './App.css';
 
 const App = () => {
@@ -32,11 +32,11 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    if (textCaptchaVerified) {
-      fetchItems();
-      navigate('/items');
-    }
+   useEffect(() => {
+     if (textCaptchaVerified) {
+       fetchItems();
+       navigate('/items');
+     }
   }, [textCaptchaVerified, navigate]);
 
   const handleSearch = (e) => {
@@ -66,7 +66,7 @@ const App = () => {
         <div className="captcha-container">
           <h2>Confirm You're Human to View Our Products</h2>
           <div className="captcha-section">
-            <TextCaptcha onVerify={onTextCaptchaVerify} />
+            <ReCaptcha onVerify={onTextCaptchaVerify} />
           </div>
         </div>
       ) : (
@@ -116,5 +116,3 @@ const App = () => {
 };
 
 export default App;
-
-
